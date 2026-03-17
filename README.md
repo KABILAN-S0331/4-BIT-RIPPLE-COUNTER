@@ -1,4 +1,7 @@
 # 4-BIT-RIPPLE-COUNTER
+### Name : Kabilan S
+### Register No : 212225230119
+### Date : 17/03/2026
 
 **AIM:**
 
@@ -24,41 +27,49 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Open Quartus software and create a new Verilog file. Paste the code and save it.
+2. Compile the program to check for errors.
+3. Generate the RTL schematic via the RTL Viewer and save the logic diagram.
+4. Use the Waveform Editor to assign nodes for clk, rstn, and out.
+5. Simulate the design with different clk and rstn combinations to generate the timing diagram, and save the results.
 
 **PROGRAM**
+
 ```
-\
-Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
+Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by:Kabilan S
-RegisterNumber: 212225230119
+Developed by: RISHI M
+RegisterNumber: 212222230119
+```
 
-module EXP12DE(clk, rst, count);
-input wire clk;
-input wire rst;
-output reg [3:0] count;
-
-always @(posedge clk or posedge rst)
+```
+module exp11(out,clk,rstn);
+input clk,rstn;
+output reg [3:0]out;
+always @ (posedge clk)
 begin
-	if(rst)
-		count <= 4'b0000;
+	if(!rstn)
+		out<=0;
 	else
-		count <= count + 1;
+		out <= out+1;
 end
 endmodule
 ```
 
-
-
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
-<img width="788" height="335" alt="502191311-4c8096d8-cad9-4d41-9cbd-e1ede8113038" src="https://github.com/user-attachments/assets/d05b8222-fa42-40ca-a722-a0eef59dc2f8" />
+![image](https://github.com/user-attachments/assets/d3e569d8-2b66-450e-b37a-fadf29de4713)
+
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 
-<img width="1468" height="766" alt="502192025-78996514-67e4-4300-aa0c-256ab03eb551" src="https://github.com/user-attachments/assets/42ab43f1-df41-4eb9-93e6-461e89f5b832" />
+![image](https://github.com/user-attachments/assets/02dd110f-c4ab-4b5e-a7ba-32ea3ba8c050)
+
+**TRUTH TABLE**
+
+![image](https://github.com/user-attachments/assets/11acf46f-2885-4477-a785-92d76b615a3a)
+
 
 **RESULTS**
 
- Thus implementing 4 Bit Ripple Counter using Verilog and validating their functionality using their functional tables is done successfully.
+Thus the Synchronous 3 bit Up counter is implemeted and verified.
